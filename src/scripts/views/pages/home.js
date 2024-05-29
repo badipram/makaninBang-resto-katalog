@@ -15,8 +15,6 @@ const Home = {
 
     try {
       const restos = await RestoDataSource.getListOfRestaurants();
-      
-      // Remove skeletons after data is loaded
       restoListContainer.innerHTML = '';
 
       restos.forEach(resto => {
