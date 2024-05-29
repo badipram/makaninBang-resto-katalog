@@ -8,8 +8,6 @@
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist --port 5020",
     "test": "jest",
-    "build-image": "node sharp.js",
-    "test:watch": "jest --watchAll",
     "minify-js": "gulp"
   },
   "keywords": [],

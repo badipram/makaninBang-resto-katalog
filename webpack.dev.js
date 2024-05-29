@@ -16,5 +16,8 @@ module.exports = merge(common, {
       },
     },
     compress: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
 });
