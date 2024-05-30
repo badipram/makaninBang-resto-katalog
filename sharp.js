@@ -19,6 +19,8 @@ fs.readdirSync(target).forEach(async (image) => {
   const smallImage = await Jimp.read(imagePath);
   smallImage.resize(750, 185).write(path.join(destination, `${imageBaseName}-small.jpg`));
 
-  largeImage.write(path.join(target, `${imageBaseName}-large.jpg`));
-  smallImage.write(path.join(target, `${imageBaseName}-small.jpg`));
+  // Ini kalau mau di save ke src/images/heroes gunakan "build-image": "node sharp.js"
+
+  // largeImage.write(path.join(target, `${imageBaseName}-large.jpg`));
+  // smallImage.write(path.join(target, `${imageBaseName}-small.jpg`));
 });

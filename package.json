@@ -9,8 +9,7 @@
     "serve": "http-server dist --port 5020",
     "test": "jest",
     "minify-js": "gulp",
-    "lint": "eslint ./src",
-    "build-image": "node sharp.js"
+    "lint": "eslint ./src"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
