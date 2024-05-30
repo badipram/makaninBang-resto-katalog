@@ -18,6 +18,9 @@ const plugins = [
       {
         from: path.resolve(__dirname, 'src/public/'),
         to: path.resolve(__dirname, 'dist/'),
+        globOptions: {
+          ignore: ['**/images/**'],
+        },
       },
     ],
   }),
@@ -59,7 +62,7 @@ if (isProduction) {
           progressive: true,
         }),
       ],
-    })
+    }),
   );
 }
 

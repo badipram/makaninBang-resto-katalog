@@ -1,5 +1,6 @@
 import RestoDataSource from '../../data/resto-data-source';
 import CONFIG from '../../globals/config';
+import 'lazysizes';
 
 const Home = {
   async render() {
@@ -24,7 +25,12 @@ const Home = {
         const restoItem = document.createElement('div');
         restoItem.classList.add('resto-item');
         restoItem.innerHTML = `
-          <img src="${smallImageUrl}" srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" alt="${resto.name}" class="resto-image lazyload">
+        <img 
+        data-src="${smallImageUrl}" 
+        data-srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" 
+        alt="${resto.name}" 
+        class="resto-image lazyload"
+      >
           <h3><a href="#/detail/${resto.id}">${resto.name}</a></h3>
           <div class="details">
             <p>🏠${resto.city}</p>
@@ -42,6 +48,7 @@ const Home = {
 
   renderSkeletons(count) {
     let skeletons = '';
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < count; i++) {
       skeletons += `
         <div class="resto-item skeleton home-skeleton">
@@ -56,8 +63,7 @@ const Home = {
       `;
     }
     return skeletons;
-  }
-  
+  },
 };
 
 export default Home;

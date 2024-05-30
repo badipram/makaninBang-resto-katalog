@@ -1,5 +1,6 @@
 import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 import CONFIG from '../../globals/config';
+import 'lazysizes';
 
 const Favorite = {
   async render() {
@@ -24,7 +25,12 @@ const Favorite = {
         const restoItem = document.createElement('div');
         restoItem.classList.add('restaurant-item');
         restoItem.innerHTML = `
-          <img src="${smallImageUrl}" srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" alt="${resto.name}" class="resto-image lazyload">
+        <img 
+        data-src="${smallImageUrl}" 
+        data-srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" 
+        alt="${resto.name}" 
+        class="resto-image lazyload"
+      >
           <h3><a href="#/detail/${resto.id}">${resto.name}</a></h3>
           <div class="details">
             <p>🏠${resto.city}</p>
@@ -42,6 +48,7 @@ const Favorite = {
 
   renderSkeletons(count) {
     let skeletons = '';
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < count; i++) {
       skeletons += `
         <div class="restaurant-item skeleton favorite-skeleton">
@@ -56,8 +63,7 @@ const Favorite = {
       `;
     }
     return skeletons;
-  }
-  
+  },
 };
 
 export default Favorite;

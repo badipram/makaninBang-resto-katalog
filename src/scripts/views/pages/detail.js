@@ -2,6 +2,7 @@ import RestoDataSource from '../../data/resto-data-source';
 import UrlParser from '../../routes/url-parser';
 import CONFIG from '../../globals/config';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import 'lazysizes';
 
 const Detail = {
   async render() {
@@ -27,7 +28,12 @@ const Detail = {
         <div id="detail-restaurant">
           <div class="header_detail">
             <h2 id="restaurant-name">${restoDetail.name}</h2>
-            <img src="${smallImageUrl}" srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" alt="${restoDetail.name}" class="restaurant-image lazyload">
+            <img 
+            data-src="${smallImageUrl}" 
+            data-srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" 
+            alt="${restoDetail.name}" 
+            class="resto-image lazyload"
+          >
             <p id="restaurant-description">${restoDetail.description}</p>
           </div>
 
@@ -115,6 +121,7 @@ const Detail = {
           const newReview = response[response.length - 1];
           const newReviewElement = document.createElement('li');
           newReviewElement.innerHTML = `<strong>${newReview.name}</strong><br> ${newReview.date}<br> "${newReview.review}"`;
+          // eslint-disable-next-line no-shadow
           const reviewListContainer = document.getElementById('restaurant-reviews');
           reviewListContainer.appendChild(newReviewElement);
           reviewNameInput.value = '';
@@ -142,6 +149,7 @@ const Detail = {
 
   renderSkeleton() {
     let skeletons = '';
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 5; i++) {
       skeletons += `
         <div class="restaurant-detail skeleton detail-skeleton">
@@ -151,7 +159,7 @@ const Detail = {
       `;
     }
     return skeletons;
-  }
+  },
 };
 
 export default Detail;

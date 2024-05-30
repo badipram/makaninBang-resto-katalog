@@ -131,7 +131,8 @@ body {
 }
 
 .hero-element {
-  background-image: url(/src/public/images/heros/hero-image_5.webp);
+  /* background-image: url(/dist/images/heros/hero-image_4-small.jpg); */
+  background:url(/src/public/images/heros/hero-image_4-small.jpg);
   text-align: center;
   background-position: center;
   background-size: cover;
