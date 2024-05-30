@@ -14,11 +14,11 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'http://localhost:5020',
-      show: true
-    }
+      show: true,
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
-  name: 'restaurant katalog'
-}
+  name: 'restaurant katalog',
+};

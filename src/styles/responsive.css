@@ -1,4 +1,14 @@
 @media screen and (min-width: 650px) {
+  .hero-element {
+    /* background:url(/dist/images/heros/hero-image_4-small.jpg); */
+    background:url(/src/public/images/heros/hero-image_4-small.jpg);
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    padding: 80px;
+    color: #e5e5cb;
+  }
+
   .app-bar {
       display: flex;
       justify-content: space-between;
@@ -52,6 +62,17 @@
 }
  
 @media screen and (min-width: 1024px) {
+
+  .hero-element {
+    /* background:url(/dist/images/heros/hero-image_4-large.jpg); */
+    background:url(/src/public/images/heros/hero-image_4-large.jpg);
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    padding: 80px;
+    color: #e5e5cb;
+  }
+
   .app-bar .app-bar__brand h1 {
     font-size: 2em;
   }
