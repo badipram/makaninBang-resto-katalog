@@ -13,6 +13,7 @@ const Detail = {
       <div id="likeButtonContainer"></div>
     `;
   },
+
   async afterRender() {
     const restoDetailContainer = document.querySelector('.resto-detail');
 
@@ -29,11 +30,11 @@ const Detail = {
           <div class="header_detail">
             <h2 id="restaurant-name">${restoDetail.name}</h2>
             <img 
-            data-src="${smallImageUrl}" 
-            data-srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" 
-            alt="${restoDetail.name}" 
-            class="resto-image lazyload"
-          >
+              data-src="${smallImageUrl}" 
+              data-srcset="${smallImageUrl} 480w, ${mediumImageUrl} 800w" 
+              alt="${restoDetail.name}" 
+              class="restaurant-image lazyload"
+            >
             <p id="restaurant-description">${restoDetail.description}</p>
           </div>
 
@@ -121,8 +122,6 @@ const Detail = {
           const newReview = response[response.length - 1];
           const newReviewElement = document.createElement('li');
           newReviewElement.innerHTML = `<strong>${newReview.name}</strong><br> ${newReview.date}<br> "${newReview.review}"`;
-          // eslint-disable-next-line no-shadow
-          const reviewListContainer = document.getElementById('restaurant-reviews');
           reviewListContainer.appendChild(newReviewElement);
           reviewNameInput.value = '';
           reviewContentInput.value = '';
@@ -143,7 +142,7 @@ const Detail = {
       });
     } catch (error) {
       console.error('Error fetching restaurant data:', error.message);
-      restoDetailContainer.innerHTML = '<p>Gagal memuat data restaurant.</p>';
+      restoDetailContainer.innerHTML = '<p>Gagal memuat data restoran.</p>';
     }
   },
 
