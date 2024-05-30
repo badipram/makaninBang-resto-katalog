@@ -17,8 +17,8 @@ fs.readdirSync(target).forEach(async (image) => {
   largeImage.resize(1350, 385).write(path.join(destination, `${imageBaseName}-large.jpg`));
 
   const smallImage = await Jimp.read(imagePath);
-  smallImage.resize(850, 265).write(path.join(destination, `${imageBaseName}-small.jpg`));
+  smallImage.resize(750, 185).write(path.join(destination, `${imageBaseName}-small.jpg`));
 
-  // largeImage.write(path.join(target, `${imageBaseName}-large.jpg`));
-  // smallImage.write(path.join(target, `${imageBaseName}-small.jpg`));
+  largeImage.write(path.join(target, `${imageBaseName}-large.jpg`));
+  smallImage.write(path.join(target, `${imageBaseName}-small.jpg`));
 });
